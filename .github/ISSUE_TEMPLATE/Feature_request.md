@@ -1,6 +1,6 @@
 ---
-name: Icon Request
-about: Suggest an icon for this project
+name: Feature Request
+about: Suggest a feature for this project
 
 ---
 
