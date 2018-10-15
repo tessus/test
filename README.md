@@ -1,1 +1,1 @@
-This repo is used to play around with multiple issue templates.
+This repo is used to play around with the github API and other stuff, e.g. multiple issue templates.
