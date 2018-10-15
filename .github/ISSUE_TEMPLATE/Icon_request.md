@@ -4,14 +4,13 @@ about: Suggest an icon for this project
 
 ---
 
-<!-- Please review the open and closed issues that the icon hasn't been requested before. -->
+<!-- Please review open and closed issues that the icon hasn't been requested before. -->
 
 ## Icon
 
-<!-- Please add an image for this icon
-
-     As a general rule, images with simple shapes and only one color are the best.
-
+<!--
+      Please add an image for this icon
+      As a general rule, images with simple shapes and only one color are the best.
 -->
 
 
