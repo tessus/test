@@ -1,7 +1,6 @@
 ---
 name: Feature request
-about: Suggest a feature for this project
-title: [Feature Request] 
+about: Suggest a feature for this projec
 
 ---
 
