@@ -12,7 +12,7 @@ As it happens, support requests that are created as issues are likely to be clos
 
 ## Questions and Help
 
-Please read the [documentation](https://joplinapp.org/) and [FAQ](https://joplinapp.org/faq/) first. If you still haven't found what you
+Please read the [documentation](https://joplinapp.org/) and [FAQ](https://joplinapp.org/faq/) first.
 
 ### https://discourse.joplinapp.org/
 
