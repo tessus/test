@@ -1,35 +1,42 @@
 ---
-name: Bug report
-about: Create a report to help us improve
+name: "🐛 Bug Report"
+about: Report a reproducible bug or regression in Joplin.
+title: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+<!--
+  Please provide a clear and concise description of what the bug is. (In the section Steps To Reproduce.)
+  Include screenshots if needed.
+  Please test using the latest Joplin release to make sure your issue has not already been fixed.
+-->
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+## Environment
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+Joplin version:
+Platform:
+OS specifcs:
+<!--
+  Platform can be one of: macOS, Linux, Windows, Android, iOS, terminal (or a combination)
+  OS specifcs: e.g. OS version, Linux distribution, Android/iOS version, ...
+-->
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+## Steps To Reproduce
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+1.
+2.
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+<!--
+  Issues without reproduction steps are likely to stall.
+-->
 
-**Additional context**
-Add any other context about the problem here.
+Describe what you expected to happen:
+
+
+
+## Logfile
+
+<!--
+  Please attach a debug log. Issues without a debug log are likely to stall.
+  For information on how to collect a log file: https://joplinapp.org/debugging/
+-->
