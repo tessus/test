@@ -17,6 +17,7 @@ Please read the [documentation](https://joplinapp.org/) and [FAQ](https://joplin
 ### https://discourse.joplinapp.org/
 
 If you have still questions related to Joplin, please open a topic in the [forum](https://discourse.joplinapp.org/).
+You can use your GitHub credentials to login to the forum.
 
 ## Links
 

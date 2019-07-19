@@ -6,6 +6,9 @@ labels: 'feature request'
 
 ---
 
+<!--
+  Please search open issues first - many features have already been requested!
+-->
 
 ## Has it been discussed in the forum? Link to topic.
 <!--
