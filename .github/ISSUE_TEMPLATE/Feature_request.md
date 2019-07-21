@@ -1,8 +1,9 @@
 ---
 name: Feature request
 about: Suggest a feature for Joplin.
-title: '[Feature request] '
-labels: 'feature request'
+title: "[Feature request] "
+labels: feature request
+assignees: ''
 
 ---
 

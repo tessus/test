@@ -1,8 +1,9 @@
 ---
-name: "🤔 Questions and Help"
+name: "\U0001F914 Questions and Help"
 about: The issue tracker is not for questions. Please ask questions on https://discourse.joplinapp.org/.
 title: 'Question: '
-labels: 'question'
+labels: question
+assignees: ''
 
 ---
 
