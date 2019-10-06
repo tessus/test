@@ -7,7 +7,9 @@ supportLabel: invalid
 # optional placeholder. Set to `false` to disable
 supportComment: >
   @{issue-author}, we use the issue tracker exclusively for bug reports.
+
   However, this issue appears to be a support or feature request.
+
   Please use the [forum](https://forum) for everything but reproducible bug reports.
 
 # Close issues marked as support requests
