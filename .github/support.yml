@@ -1,0 +1,23 @@
+# Configuration for Support Requests - https://github.com/dessant/support-requests
+
+# Label used to mark issues as support requests
+supportLabel: invalid
+
+# Comment to post on issues marked as support requests, `{issue-author}` is an
+# optional placeholder. Set to `false` to disable
+supportComment: >
+  @{issue-author}, we use the issue tracker exclusively for bug reports.
+  However, this issue appears to be a support or feature request.
+  Please use the [forum](https://forum) for everything but reproducible bug reports.
+
+# Close issues marked as support requests
+close: true
+
+# Lock issues marked as support requests
+lock: false
+
+# Assign `off-topic` as the reason for locking. Set to `false` to disable
+setLockReason: true
+
+# Repository to extend settings from
+# _extends: repo
