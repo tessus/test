@@ -1,3 +1,7 @@
+---
+labels: invalid
+
+---
 👉 Please follow one of these issue templates:
 - https://github.com/laurent22/joplin/issues/new/choose
 
