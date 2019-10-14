@@ -17,3 +17,6 @@ markComment: >
 closeComment: >
   Closing this issue after a prolonged period of inactivity. If this issue is still present in the latest release, please feel free to create a new issue with up-to-date information.
 only: issues
+
+daysUntilLock: 1
+lockComment: false
