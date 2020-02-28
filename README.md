@@ -4,4 +4,4 @@ Also a test bed for `hub` and `gh`.
 
 ~~Test~~
 
-==marked==
+==Marked text== is not rendered on github. No womder, it's not a markdown standard.
