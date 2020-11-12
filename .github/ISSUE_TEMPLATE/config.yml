@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-    - name: ❓ Question
-      url: https://help.nextcloud.com/
+    - name: "\U0001F914 Feature requests and support"
+      url: https://discourse.joplinapp.org/
       about: I have a question …
