@@ -24,11 +24,9 @@ The shortcuts can be changed in the shortcut editor (`Settings > Keyboard Shortc
 
 # Settings
 
-All settings require a restart of Joplin.
+**Please note:** All settings require a restart of Joplin.
 
-**Only activate, if enabled in Markdown Plugin settings**:
-
-Only activate menu items, shortcuts, and toolbar icons for markdown plugins which are enabled in Joplin's settings.
+`Only activate, if enabled in Markdown Plugin settings`: Only activate menu items, shortcuts, and toolbar icons for markdown plugins which are enabled in Joplin's settings.
 
 Under `Show Advanced Settings` it is possible to disable toolbar icons for individual actions.
 
