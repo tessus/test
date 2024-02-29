@@ -24,7 +24,7 @@ jobs:
         run: echo "FILE_MODIFIED=$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)" >> $GITHUB_ENV
 
       - name: commit updated CONTRIBUTORS
-        if: $FILE_MODIFIED == true
+        if: ${{ env.FILE_MODIFIED }} == true
         run: |
           git add CONTRIBUTORS
           git commit -m "chore: update CONTRIBUTORS"
