@@ -21,7 +21,12 @@ jobs:
 
       - name: check for modified files
         id: git-check
-        run: echo "FILE_MODIFIED=$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)" >> $GITHUB_ENV
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "FILE_MODIFIED=true" >> $GITHUB_ENV
+          else
+            echo "FILE_MODIFIED=false" >> $GITHUB_ENV
+          fi
 
       - name: commit updated CONTRIBUTORS
         if: ${{ env.FILE_MODIFIED == true }}
