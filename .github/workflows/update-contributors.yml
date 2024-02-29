@@ -23,13 +23,13 @@ jobs:
         id: git-check
         run: |
           if [ -n "$(git status --porcelain)" ]; then
-            echo "FILE_MODIFIED=true" >> $GITHUB_ENV
+            echo "FILE_MODIFIED=true" >> $GITHUB_OUTPUT
           else
-            echo "FILE_MODIFIED=false" >> $GITHUB_ENV
+            echo "FILE_MODIFIED=false" >> $GITHUB_OUTPUT
           fi
 
       - name: commit updated CONTRIBUTORS
-        if: ${{ env.FILE_MODIFIED == true }}
+        if: steps.git-check.outputs.FILE_MODIFIED == 'true'
         run: |
           git add CONTRIBUTORS
           git commit -m "chore: update CONTRIBUTORS"
