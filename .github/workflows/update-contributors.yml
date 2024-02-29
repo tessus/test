@@ -1,0 +1,31 @@
+name: Update CONTRIBUTORS file
+on:
+  schedule:
+    - cron: "0 0 1 * *"
+  workflow_dispatch:
+jobs:
+  update_contributors:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: retrieve contributors and update file
+        run: |
+          git log --pretty='%an <%ae>' |sort -uf |grep -v "\[bot\]" >CONTRIBUTORS
+
+      - name: setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+
+      - name: check for modified files
+        id: git-check
+        run: echo ::set-output name=modified::$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)
+
+      - name: commit updated CONTRIBUTORS
+        if: steps.git-check.outputs.modified == 'true'
+        run: |
+          git add CONTRIBUTORS
+          git commit -m "chore: update CONTRIBUTORS"
+          git push
