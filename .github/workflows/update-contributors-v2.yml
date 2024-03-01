@@ -1,4 +1,4 @@
-name: Update CONTRIBUTORS file
+name: Update CONTRIBUTORS file v2
 on:
   schedule:
     - cron: "0 0 1 * *"
