@@ -20,9 +20,9 @@ jobs:
           fetch-depth: 0
 
       - name: Retrieve contributors and update file
-        shell: bash
+        shell: bash {0}
         run: |
-          git shortlog -se |tr "\t" ":" |cut -d: -f2- |sort -uf |grep -v "\[bot\]" >CONTRIBUTORS
+          git shortlog -se |tr '\t' ':' |cut -d: -f2- |sort -uf |grep -v "\[bot\]" >CONTRIBUTORS
 
       - name: Setup git config
         shell: bash
