@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: update
-        uses: tessus/update-contributors-list@601454cb8d35a27777ab6bec41f7a3d290f08b16
+        uses: tessus/update-contributors-list@04629f14f17540e23256be1ce772b5f0793c9bae
