@@ -22,10 +22,7 @@ jobs:
       - name: Retrieve contributors and update file
         shell: bash
         run: |
-          git shortlog -sen >SHORTLOG
-          git shortlog -sen |tr '\t' ':' >TR
-          git shortlog -sen |tr '\t' ':' |cut -d: -f2- >CUT
-          git shortlog -sen |tr '\t' ':' |cut -d: -f2- |sort -uf |sed '/\[bot\]/d' >CONTRIBUTORS
+          git log |git shortlog -se |tr '\t' ':' |cut -d: -f2- |sort -uf |sed '/\[bot\]/d' >CONTRIBUTORS
 
       - name: Setup git config
         shell: bash
@@ -47,6 +44,6 @@ jobs:
         if: steps.git-check.outputs.FILE_MODIFIED == 'true'
         shell: bash
         run: |
-          git add -A
+          git add CONTRIBUTORS
           git commit -m "chore: update CONTRIBUTORS"
           git push
