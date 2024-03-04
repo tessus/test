@@ -20,7 +20,7 @@ jobs:
           fetch-depth: 0
 
       - name: Retrieve contributors and update file
-        shell: /usr/bin/env bash
+        shell: /usr/bin/bash {0}
         run: |
           set +e
           set +o pipefail
