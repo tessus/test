@@ -22,7 +22,8 @@ jobs:
       - name: Retrieve contributors and update file
         shell: bash
         run: |
-          set +x
+          set +e
+          set +o pipefail
           git shortlog -se |tr '\t' ':' |cut -d: -f2- |sort -uf |grep -v "\[bot\]" >CONTRIBUTORS
 
       - name: Setup git config
