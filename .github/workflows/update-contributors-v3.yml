@@ -1,0 +1,49 @@
+name: Update CONTRIBUTORS file v3
+on:
+  schedule:
+    - cron: "0 0 1 * *"
+  workflow_dispatch:
+jobs:
+  update_contributors:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Runner OS
+        if: ${{ runner.os != 'Linux' }}
+        shell: bash
+        run: |
+          echo "This action must be run on Linux."
+          exit 1
+
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Retrieve contributors and update file
+        shell: bash
+        run: |
+          git shortlog -se |tr "\t" ":" |cut -d: -f2- |sort -uf |grep -v "\[bot\]" >CONTRIBUTORS
+
+      - name: Setup git config
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Check for modified file
+        id: git-check
+        shell: bash
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "FILE_MODIFIED=true" >> $GITHUB_OUTPUT
+          else
+            echo "FILE_MODIFIED=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit updated CONTRIBUTORS
+        if: steps.git-check.outputs.FILE_MODIFIED == 'true'
+        shell: bash
+        run: |
+          git add CONTRIBUTORS
+          git commit -m "chore: update CONTRIBUTORS"
+          git push
