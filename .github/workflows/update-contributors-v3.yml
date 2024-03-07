@@ -22,7 +22,7 @@ jobs:
       - name: Retrieve contributors and update file
         shell: bash
         run: |
-          git log |git shortlog -se |tr '\t' ':' |cut -d: -f2- |sed '/\[bot\]/d' >CONTRIBUTORS
+          git log |git shortlog -sen |tr '\t' ':' |cut -d: -f2- |sed '/\[bot\]/d' >CONTRIBUTORS
 
       - name: Setup git config
         shell: bash
