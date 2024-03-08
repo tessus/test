@@ -36,14 +36,13 @@ jobs:
           NUM=$(cat CONTRIBUTORS |wc -l |xargs)
           echo "NUM_CONTRIB=$NUM" >> $GITHUB_OUTPUT
 
-      - name: Sort by name or not
-        if: ("${{ github.event.inputs.sort-by }}" == "auto" && ${{ steps.num-contrib.outputs.NUM_CONTRIB }} -gt 30) || "${{ github.event.inputs.sort-by }}" == "name"
+      - name: To sort, or not to sort, that is the question
         shell: bash
         run: |
-          #if [[ ("${{ github.event.inputs.sort-by }}" == "auto" && ${{ steps.num-contrib.outputs.NUM_CONTRIB }} -gt 30) || "${{ github.event.inputs.sort-by }}" == "name" ]]; then
-          cat CONTRIBUTORS |sort -uf >CONTRIBUTORS.sorted
-          mv CONTRIBUTORS.sorted CONTRIBUTORS
-          #fi
+          if [[ ("${{ github.event.inputs.sort-by }}" == "auto" && ${{ steps.num-contrib.outputs.NUM_CONTRIB }} -gt 30) || "${{ github.event.inputs.sort-by }}" == "name" ]]; then
+            cat CONTRIBUTORS |sort -uf >CONTRIBUTORS.sorted
+            mv CONTRIBUTORS.sorted CONTRIBUTORS
+          fi
 
       - name: Setup git config
         shell: bash
