@@ -8,6 +8,10 @@ on:
         description: 'Sort contributors by: name, commits, auto'
         required: false
         default: 'auto'
+      sort-by-auto-threshold:
+        description: 'If sort-by=auto, at which number of contributors is the list sorted by name'
+        required: false
+        default: 30
 jobs:
   update_contributors:
     runs-on: ubuntu-latest
@@ -39,7 +43,7 @@ jobs:
       - name: To sort, or not to sort, that is the question
         shell: bash
         run: |
-          if [[ ("${{ github.event.inputs.sort-by }}" == "auto" && ${{ steps.num-contrib.outputs.NUM_CONTRIB }} -gt 30) || "${{ github.event.inputs.sort-by }}" == "name" ]]; then
+          if [[ ("${{ github.event.inputs.sort-by }}" == "auto" && ${{ steps.num-contrib.outputs.NUM_CONTRIB }} -gt ${{ github.event.inputs.sort-by-auto-threshold }}) || "${{ github.event.inputs.sort-by }}" == "name" ]]; then
             cat CONTRIBUTORS |sort -uf >CONTRIBUTORS.sorted
             mv CONTRIBUTORS.sorted CONTRIBUTORS
           fi
