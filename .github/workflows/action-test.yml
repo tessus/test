@@ -1,0 +1,9 @@
+name: Test action
+on:
+  workflow_dispatch:
+jobs:
+  update_contributors:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test-action
+        uses: tessus/action-test@6047b8530ddfa3a13d4b7f0f90b26412bcee473b
