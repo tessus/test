@@ -33,7 +33,7 @@ jobs:
         id: num-contrib
         shell: bash
         run: |
-          NUM=$(cat CONTRIBUTORS |wc -l)
+          NUM=$(cat CONTRIBUTORS |wc -l |xargs)
           echo "NUM_CONTRIB=$NUM" >> $GITHUB_OUTPUT
 
       - name: Sort by name
