@@ -41,7 +41,7 @@ jobs:
         run: |
           #echo ${{ github.event.inputs.sort-by }} >TEST
           #echo ${{ steps.num-contrib.outputs.NUM_CONTRIB }} >>TEST
-          if [[ ("${{ github.event.inputs.sort-by }}" == 'auto' && "${{ steps.num-contrib.outputs.NUM_CONTRIB }}" > 30) || "${{ github.event.inputs.sort-by }}" == 'name' ]]; then
+          if [[ ("${{ github.event.inputs.sort-by }}" == "auto" && ${{ steps.num-contrib.outputs.NUM_CONTRIB }} > 30) || "${{ github.event.inputs.sort-by }}" == 'name' ]]; then
             cat CONTRIBUTORS |sort -uf >CONTRIBUTORS.sorted
             mv CONTRIBUTORS.sorted CONTRIBUTORS
           fi
