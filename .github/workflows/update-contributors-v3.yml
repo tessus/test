@@ -40,6 +40,8 @@ jobs:
         shell: bash
         if: (${{ github.event.inputs.sort-by }}" == 'auto' && steps.num-contrib.outputs.NUM_CONTRIB > 30) || ${{ github.event.inputs.sort-by }}" == 'name'
         run: |
+          echo ${{ github.event.inputs.sort-by }} >TEST
+          echo ${{ steps.num-contrib.outputs.NUM_CONTRIB }} >>TEST
           cat CONTRIBUTORS |sort -uf >CONTRIBUTORS.sorted
           mv CONTRIBUTORS.sorted CONTRIBUTORS
 
@@ -63,6 +65,7 @@ jobs:
         if: steps.git-check.outputs.FILE_MODIFIED == 'true'
         shell: bash
         run: |
-          git add CONTRIBUTORS
+          #git add CONTRIBUTORS
+          git add -A
           git commit -m "chore: update CONTRIBUTORS"
           git push
