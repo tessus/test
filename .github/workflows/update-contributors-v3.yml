@@ -3,6 +3,11 @@ on:
   schedule:
     - cron: "0 0 1 * *"
   workflow_dispatch:
+    inputs:
+      sort-by:
+        description: 'Sort contributors by: name, commits, auto'
+        required: false
+        default: 'auto'
 jobs:
   update_contributors:
     runs-on: ubuntu-latest
@@ -23,6 +28,20 @@ jobs:
         shell: bash
         run: |
           git log |git shortlog -sen |tr '\t' ':' |cut -d: -f2- |sed '/\[bot\]/d' >CONTRIBUTORS
+
+      - name: Retrieve the number of contributors
+        id: num-contrib
+        shell: bash
+        run: |
+          NUM=$(cat CONTRIBUTORS |wc -l)
+          echo "NUM_CONTRIB=$NUM" >> $GITHUB_OUTPUT
+
+      - name: Sort by name
+        shell: bash
+        if: (${{ github.event.inputs.sort-by }}" == 'auto' && steps.num-contrib.outputs.NUM_CONTRIB > 30) || ${{ github.event.inputs.sort-by }}" == 'name'
+        run: |
+          cat CONTRIBUTORS |sort -uf >CONTRIBUTORS.sorted
+          mv CONTRIBUTORS.sorted CONTRIBUTORS
 
       - name: Setup git config
         shell: bash
