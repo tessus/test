@@ -7,3 +7,5 @@ jobs:
     steps:
       - name: test-action
         uses: tessus/action-test@9d585075971ec2e81e83c298dbc4bfe856e4f82d
+        with:
+          sort-by-auto-threshold: 2
