@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: test-action
-        uses: tessus/action-test@9d585075971ec2e81e83c298dbc4bfe856e4f82d
+        uses: tessus/action-test@a647ea9901eb95de567dffc55099dc6bff161900
         with:
           sort-by-auto-threshold: 20

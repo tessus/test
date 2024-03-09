@@ -11,7 +11,7 @@ on:
       sort-by-auto-threshold:
         description: 'If sort-by=auto, at which number of contributors is the list sorted by name'
         required: false
-        default: 30
+        default: '30'
 jobs:
   update_contributors:
     runs-on: ubuntu-latest
