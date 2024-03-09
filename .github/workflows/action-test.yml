@@ -9,3 +9,4 @@ jobs:
         uses: tessus/action-test@120ae3cb39c00a25e4d21ff8ad358f242c8b31df
         with:
           sort-by-auto-threshold: 20
+          exclude: '[bot], Joplin Bot'
