@@ -2,11 +2,11 @@ name: Test action
 on:
   workflow_dispatch:
 jobs:
-  update_contributors:
+  update-contributors:
     runs-on: ubuntu-latest
     steps:
-      - name: test-action
-        uses: tessus/action-test@9831cc08243971ed49371cef5d3dbff029d7c4cb
+      - name: Update Contributors
+        uses: tessus/action-test@235a4f9b07ed844b55cbf8c3db07b3e619ede957
         with:
           sort-by-auto-threshold: 20
           exclude: '[bot], Joplin Bot'
