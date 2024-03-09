@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: test-action
-        uses: tessus/action-test@120ae3cb39c00a25e4d21ff8ad358f242c8b31df
+        uses: tessus/action-test@9831cc08243971ed49371cef5d3dbff029d7c4cb
         with:
           sort-by-auto-threshold: 20
           exclude: '[bot], Joplin Bot'
