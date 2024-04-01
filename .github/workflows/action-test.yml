@@ -1,4 +1,4 @@
-name: Test action
+name: Test Update Contributors action
 on:
   workflow_dispatch:
 jobs:
