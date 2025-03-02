@@ -8,7 +8,7 @@ Also a test bed for `hub` and `gh`.
 
 ~~Strikethrough~~
 
-==Marked text== is not rendered on github. No womder, it's not a markdown standard.
+==Marked text== is not rendered on github. No wonder, it's not a markdown standard.
 
 # Reference
 
